@@ -1,46 +1,14 @@
 # Goal
 Be able to test printCurrentDate function.
 # Code to test
-    public function printCurrentDate()
+    public void PrintCurrentDate()
     {
-        echo date("Y-m-d H:i:s");
+      Console.WriteLine(DateTime.Now);
     }
 # Learnings
 How to build a Mock and Stub manually.
 
-How to use Prophecy to generate the doubles.
-## Tools
-[Prophecy](https://github.com/phpspec/prophecy). Mocking library. 
 
-### Example of Mock	
-	/**
-     * @test
-     */
-    public function shouldUseTheExternalCollaborator()
-    {
-        $myCollaboratorProphecy = $this->prophesize(Collaborator::class);
-        /** @var Collaborator $collaborator */
-        $collaborator = $myCollaboratorProphecy->reveal();
-        $myClass = new MyClass($collaborator);
-        
-        $myClass->run();
-        
-        $myCollaboratorProphecy->collaborate()->shouldHaveBeCalled();
-    }
+### Example of Mock
+
 ### Example of Stub    
-    /**
-     * @test
-     */
-    public function shouldReturnTheCollaboratorResponse()
-    {
-        $myCollaboratorProphecy = $this->prophesize(Collaborator::class);
-        $collaboratorResponse = 'collaborator response';
-        $myCollaboratorProphecy->collaborate()->willReturn($collaboratorResponse);
-        /** @var Collaborator $collaborator */
-        $collaborator = $myCollaboratorProphecy->reveal();
-        $myClass = new MyClass($collaborator);
-        
-        $response = $myClass->run();
-        
-        $this->assertEquals($collaboratorResponse, $response);
-    }
