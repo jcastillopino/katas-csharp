@@ -1,7 +1,7 @@
 # Installation
 1. Download the code using GIT or with the [downloading the zip](https://github.com/luisrovirosa/katas-csharp/archive/master.zip) link
-- Install [xUnit.net](https://xunit.github.io/docs/getting-started-desktop.html)
-- Go into the folder of the kata you want to practice. Eg: cd fizz-buzz
+- Open with Visual Studio the solution for the current kata
+- Ejecutar las pruebas: Pruebas - Ejecutar - Todas las pruebas (Ctrl + R, A)
 
 # Katas
 ## Fizz Buzz

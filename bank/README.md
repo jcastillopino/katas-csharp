@@ -9,37 +9,29 @@ You cannot change the signature of the public interface (the class AccountServic
 ## Code
 	class AccountService {
 
-      // <summary>
-      //   Add an amount into the account.
-      // </summary>
       public void Deposit(int amount)
       {
       }
 
-      // <summary>
-      //   Remove an amount from the account.
-      // </summary>
-      public void Withdraw($amount)
+      public void Withdraw(int amount)
       {
       }
 
-      // <summary>
-      //   Print the statements containing all the transactions in the console
-      // </summary>
       public void PrintStatements()
       {
       }
 	}
-##Acceptance test
 
-	[Test]
+## Acceptance test
+
+	[Fact]
 	public void should_print_statement_containing_all_transactions() {
+		// Arrange
 
     	account.Deposit(1000);
     	account.Withdraw(100);
     	account.Deposit(500);
-
-    	account.PrintStatement();
+    	account.PrintStatements();
 
     	console.Received().PrintLine("DATE | AMOUNT | BALANCE");
     	console.Received().PrintLine("10/04/2014 | 500 | 1400");
@@ -49,10 +41,9 @@ You cannot change the signature of the public interface (the class AccountServic
 
 ## Tools
 
-
 ### Example of Mock
 
-	[Test]
+	[Fact]
 	public void should_interact_with_the_mock() {
     	collaborator = Substitute.For<Collaborator>();       
     	MyClass myClass = new MyClass(collaborator);
@@ -63,7 +54,7 @@ You cannot change the signature of the public interface (the class AccountServic
 	}
 ### Example of Stub    
 
-	[Test]
+	[Fact]
 	public void should_retrieve_the_stub_response(){
     	collaborator = Substitute.For<Collaborator>();
     	String response = "collaborator response";
@@ -72,5 +63,5 @@ You cannot change the signature of the public interface (the class AccountServic
 
     	String result = myClass.Run();
 
-    	Assert.That(result, Is.EqualTo(response)); 
-	I}
+    	Assert.Equal(response, result);
+	}
