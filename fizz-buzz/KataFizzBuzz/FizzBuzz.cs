@@ -25,8 +25,7 @@ namespace KataFizzBuzz {
                 return "Fizz";
             if (IsBuzz(i))
                 return "Buzz";
-            else
-                return i.ToString();
+            return i.ToString();
         }
 
         private static bool IsFizzBuzz(int i) {
