@@ -52,7 +52,7 @@ namespace KataFizzBuzz.Tests {
         }
 
         [Fact]
-        public void FizzBuzz_101_outOfRange_throws_Exception() {
+        public void FizzBuzz_access_element_101_should_throws_Exception() {
             var result = ProcessNumbersFrom1To100();
             Exception ex = Assert.Throws<ArgumentOutOfRangeException>(() => result[100]);
         }
