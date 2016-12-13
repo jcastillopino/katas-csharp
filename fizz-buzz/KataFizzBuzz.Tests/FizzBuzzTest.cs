@@ -4,6 +4,7 @@ using Xunit;
 
 namespace KataFizzBuzz.Tests {
     public class FizzBuzzTest {
+
         private IList<string> ProcessNumbersFrom1To100() {
             var fizzBuzz = new FizzBuzz(1, 100);
             return fizzBuzz.ProcessNumbers();
