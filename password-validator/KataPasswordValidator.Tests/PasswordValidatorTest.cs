@@ -14,7 +14,7 @@ namespace KataPasswordValidator.Tests {
         }
 
         private static bool ValidatePassword(string password) {
-            return _validator.Validate(password);
+            return _validator.IsValid(password);
         }
 
         [Fact]
