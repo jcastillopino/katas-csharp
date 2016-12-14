@@ -14,7 +14,7 @@ namespace KataPrintDate.Tests {
         }
 
         [Fact]
-        public void PrintDate_ValueOf_PrintCurrentDate() {
+        public void NowDouble_ValueOf_Now() {
             var nowDouble = new NowDouble("Hola Stub");
 
             var result = nowDouble.Now();
