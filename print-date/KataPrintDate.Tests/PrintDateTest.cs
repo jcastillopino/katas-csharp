@@ -1,23 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-using NSubstitute;
+﻿using Xunit;
 
-namespace KataPrintDate.Tests
-{
-    public class PrintDateTest
-    {
+namespace KataPrintDate.Tests {
+    public class PrintDateTest {
+
         [Fact]
-        public void think_a_good_name_and_change_it()
-        {
-            var printDate = new PrintDate();
+        public void PrintDate_Executed_PrintCurrentDate() {
+            var writerDouble = new WriterDouble();
+            var printDate = new PrintDate(writerDouble);
 
             printDate.PrintCurrentDate();
 
-            // I don't know how to test it 
+            Assert.True(writerDouble.WasWriteLineExecuted());
+        }
+
+        [Fact]
+        public void PrintDate_ValueOf_PrintCurrentDate() {
+            var nowDouble = new NowDouble("Hola Stub");
+
+            var result = nowDouble.Now();
+
+            Assert.Equal("Hola Stub", result);
         }
     }
 }

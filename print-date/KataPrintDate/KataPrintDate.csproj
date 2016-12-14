@@ -40,8 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleWriter.cs" />
+    <Compile Include="INow.cs" />
+    <Compile Include="IWriteLine.cs" />
+    <Compile Include="NowDouble.cs" />
     <Compile Include="PrintDate.cs" />
+    <Compile Include="PrintDateDouble.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WriterDouble.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
